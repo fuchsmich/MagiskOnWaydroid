@@ -25,7 +25,7 @@ on:
       magisk_apk:
         description: "Magisk version"
         required: true
-        default: "26.1"
+        default: "24.3"
         type: choice
         options:
         - 24.1
@@ -38,7 +38,7 @@ on:
       gapps_variant:
         description: "Variants of gapps"
         required: true
-        default: "pico"
+        default: "none"
         type: choice
         options:
         - none
@@ -102,13 +102,13 @@ jobs:
                 matrix.magisk_apk = ["delta"];
                 break;
               default:
-                matrix.magisk_apk = ["25.2"];
+                matrix.magisk_apk = ["24.3"];
                 break;
             }
             let gapps_variant = "${{ github.event.inputs.gapps_variant }}"
             switch ( gapps_variant ) {
               default:
-                matrix.gapps_variant = ["pico"];
+                matrix.gapps_variant = ["none"];
                 break;
             }
             let root_sol = "${{ github.event.inputs.root_sol }}"
